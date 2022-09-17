@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "tsnd --exit-child src/server.js",
-    "start": "node dist/server.ts"
+    "dev": "tsnd --exit-child src/server.ts",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
