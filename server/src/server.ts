@@ -8,7 +8,19 @@ import { convertMinutesToHourString } from './utils/convert-minutes-to-hours-str
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: true
+}))
+app.use((req, res, next) => {
+  res.header('Acess-control-Allow-Origin', 'https://duo-esports.vercel.app/')
+  res.header('Acess-control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
+
+  if (req.method === 'OPTIONS') {
+    res.header('Acess-control-Allow-Headers', 'GET, POST, PUT, PATCH, DELETE')
+    return res.status(200).json({})
+  }
+  next()
+})
 
 const prisma = new PrismaClient({
   log: ['query']
