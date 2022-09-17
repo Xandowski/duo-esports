@@ -9,8 +9,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.env
 server/src/database/db.sqlite
 # macOS
 .DS_Store
 
-.env
